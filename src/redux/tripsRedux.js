@@ -22,26 +22,22 @@ export const getFilteredTrips = ({trips, filters}) => {
 
 export const getTripById = ({trips}, tripId) => {
   trips.filter(trip => trip.tripId == tripId);
-  //const filtered = trips;
+  const filtered = trips;
 
   // TODO - filter trips by tripId
 
-  //console.log('filtering trips by tripId:', tripId, filtered);
+  console.log('filtering trips by tripId:', tripId, filtered);
   //return filtered.length ? filtered[0] : {error: true};
 };
 
-export const getTripsForCountry = ({trips}, countryCode) =>
-  trips.filter(trip => new RegExp(countryCode).test(trip.code));
-  //const filtered = trips;
+export const getTripsForCountry = ({trips}, countryCode) => {
+  const filtered = trips;
 
-//   // TODO - filter trips by countryCode
-//   export const getCardsFromAllList = ({cards}, searchString ) => 
-//   cards.filter(card => 
-//     new RegExp(searchString).test(card.title));
+  // TODO - filter trips by countryCode
 
-//   console.log('filtering trips by countryCode:', countryCode, filtered);
-//   return filtered.length ? filtered : [{error: true}];
-// };
+  console.log('filtering trips by countryCode:', countryCode, filtered);
+  return filtered.length ? filtered : [{error: true}];
+};
 
 /* ACTIONS */
 
