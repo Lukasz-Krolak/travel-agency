@@ -5,16 +5,18 @@ import styles from './TripListOptions.scss';
 import {Row, Col} from 'react-flexbox-grid';
 
 class TripListOptions extends React.Component {
-  handleTags(tag, checked){
+  handleTags(tag, checked, unChecked){
     if(checked) {
       this.props.changeTags(tag);
       console.log('Adding tag', tag);
       // TODO - use action dispatcher from props
       
     } else {
-      console.log('Removing tag', tag);
-      // TODO - use action dispatcher from props
-      this.props.changeTags(tag);
+      if(unChecked){
+        console.log('Removing tag', tag,);
+        // TODO - use action dispatcher from props
+        this.props.changeTags(tag);
+      }
     }
   }
 
@@ -68,7 +70,7 @@ class TripListOptions extends React.Component {
                 <div className={styles.dropdown}>
                   {Object.keys(tags).map(tag => (
                     <label key={tag} className={styles.option}>
-                      <input type='checkbox' checked={filters.tags.indexOf(tag) > -1} onChange={event => this.handleTags(tag, event.currentTarget.checked)} />
+                      <input type='checkbox' checked={filters.tags.indexOf(tag) > -1} unChecked={filters.tags.indexOf(tag) > 1} onChange={event => this.handleTags(tag, event.currentTarget.checked)} />
                       {tag}
                     </label>
                   ))}
