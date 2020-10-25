@@ -41,22 +41,24 @@ export const getTripsForCountry = ({trips}, countryCode) => {
 
 /* ACTIONS */
 
-/*
+
 // action name creator
 const reducerName = 'trips';
 const createActionName = name => `app/${reducerName}/${name}`;
 
 // action types
-
+export const TYPE_TRIPS = createActionName('TYPE_TRIPS');
 
 // action creators
-
+export const createTypeTrips = payload => ({ payload, type: TYPE_TRIPS });
 
 // reducer
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
+    case TYPE_TRIPS:
+      return action.payload;
     default:
       return statePart;
   }
 }
- */
+ 
