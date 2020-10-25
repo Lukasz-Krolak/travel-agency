@@ -7,24 +7,26 @@ import {Row, Col} from 'react-flexbox-grid';
 class TripListOptions extends React.Component {
   handleTags(tag, checked){
     if(checked) {
-      
+      this.props.changeTags(tag);
       console.log('Adding tag', tag);
       // TODO - use action dispatcher from props
       
     } else {
       console.log('Removing tag', tag);
       // TODO - use action dispatcher from props
+      this.props.changeTags(tag);
+
     }
   }
 
   handleDuration(type, value){
     console.log('Changing duration', type, value);
     // TODO - use action dispatcher from props
-    if(this.value != event.currentTarget.value){
-      this.changeDurationFrom({value});
+    if(type === 'from'){
+      this.props.changeDurationFrom(value);
     } else {
-      if(this.value != event.currentTarget.value){
-        this.changeDurationTo({value});
+      if(type === 'to'){
+        this.props.changeDurationTo(value);
       }
     }
   }
@@ -49,7 +51,10 @@ class TripListOptions extends React.Component {
             <div className={styles.filter}>
               <label>
                 Duration from:
-                <input className={`${styles.input} ${styles.number}`} type='number' value={filters.duration.from} min='1' max='14' onChange={event => this.handleDuration('from', event.currentTarget.value)} />
+                <input className={`${styles.input} ${styles.number}`} 
+                  type='number' value={filters.duration.from} 
+                  min='1' max='14' 
+                  onChange={event => this.handleDuration( 'from', event.currentTarget.value)} />
               </label>
               <label>
                 to:
@@ -84,6 +89,7 @@ TripListOptions.propTypes = {
   changeSearchPhrase: PropTypes.func,
   changeDurationFrom: PropTypes.func,
   changeDurationTo: PropTypes.func,
+  changeTags: PropTypes.func,
 
 };
 
