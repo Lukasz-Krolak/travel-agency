@@ -14,6 +14,7 @@ export const CHANGE_PHRASE = createActionName('CHANGE_PHRASE');
 export const CHANGE_DURATION_FROM = createActionName('CHANGE_DURATION_FROM');
 export const CHANGE_DURATION_TO = createActionName('CHANGE_DURATION_TO');
 export const CHANGE_TAGS = createActionName('CHANGE_TAGS');
+export const CHANGE_TAGS_NO = createActionName('CHANGE_TAGS_NO');
 
 // action creators
 export const changeSearchPhrase = payload => ({ payload, type: CHANGE_PHRASE });
@@ -21,6 +22,7 @@ export const changeSearchPhrase = payload => ({ payload, type: CHANGE_PHRASE });
 export const changeDurationFrom = payload => ({ payload, type: CHANGE_DURATION_FROM });
 export const changeDurationTo = payload => ({ payload, type: CHANGE_DURATION_TO });
 export const changeTags = payload => ({ payload, type: CHANGE_TAGS });
+export const changeTagsNo = payload => ({ payload, type: CHANGE_TAGS_NO });
 
 // reducer
 export default function reducer(statePart = [], action = {}) {
@@ -50,7 +52,12 @@ export default function reducer(statePart = [], action = {}) {
     case CHANGE_TAGS:
       return {
         ...statePart,
-        tags: action.payload,
+        tags: [...statePart.tags, action.payload],
+      };
+    case CHANGE_TAGS_NO:
+      return {
+        ...statePart,
+        tags: [...statePart],
       };
     default:
       return statePart;
