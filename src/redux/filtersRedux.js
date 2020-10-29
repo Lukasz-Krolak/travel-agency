@@ -57,7 +57,7 @@ export default function reducer(statePart = [], action = {}) {
     case CHANGE_TAGS_NO:
       return {
         ...statePart,
-        tags: [...statePart],
+        tags: [...statePart.tags.filter(tag => tag !== action.payload)],
       };
     default:
       return statePart;
