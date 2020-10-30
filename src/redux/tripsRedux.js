@@ -20,11 +20,9 @@ export const getFilteredTrips = ({trips, filters}) => {
   
 
   // TODO - filter by tags
-  if (filters.tags){
-    const pattern = new RegExp(filters.tags, 'i');
-    output = output.filter(trip => pattern.test(trip.tags === filters.tags));
+  if (filters.tags.length > 0){
+    output = output.filter(trip => filters.tags.every(tag => trip.tags.includes(tag)));
   }
-
   // TODO - sort by cost descending (most expensive goes first)
 
   return output;
