@@ -2,26 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './OrderForm.scss';
 import {Grid, Row, Col} from 'react-flexbox-grid';
+import OrderSummary from '../OrderSummary/OrderSummary.js';
 
-class OrderForm extends React.Component {
-  render () {
-    const {PageTitle, cost} = this.props;
-    return (
-      <div className={styles.component}>
-        <Grid>
-          <Row>
-            <Col xs={12}>
-              <PageTitle text='Trip options' />
-              <OrderForm tripCost={cost} />
-            </Col>
-          </Row>
-        </Grid>
-      </div>
-    );
-  }
-}
+const OrderForm = (options) => (
+  <div className={styles.component}>
+    <Grid>
+      <Row>
+        <Col xs={12}>
+          <OrderSummary tripCost={options}/>
+        </Col>
+      </Row>
+    </Grid>
+  </div>
+);
+
 OrderForm.propTypes = {
-  PageTitle: PropTypes.string,
   cost: PropTypes.string,
 };
+
 export default OrderForm;

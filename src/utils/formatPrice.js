@@ -9,3 +9,9 @@ export const formatPrice = price => {
         maximumFractionDigits: 0,
       });
 };
+export const formatPriceToNumber = price => {
+  let number = price.replace('$,'); 
+  number = number.replace (',','');
+  return parseFloat(number);
+};
+

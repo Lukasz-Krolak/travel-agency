@@ -1,4 +1,5 @@
 /* SELECTORS */
+import formatPriceToNumber from '../utils/formatPrice.js';
 
 export const getAllTrips = ({trips}) => trips;
 
@@ -25,6 +26,15 @@ export const getFilteredTrips = ({trips, filters}) => {
   }
   // TODO - sort by cost descending (most expensive goes first)
 
+  if (formatPriceToNumber) {
+    output = output.sort((a,b) => {
+      const priceA = formatPriceToNumber(a.cost);
+      const priceB = formatPriceToNumber(b.cost);
+  
+      return priceB - priceA;
+  
+    });
+  }
   return output;
 };
 
