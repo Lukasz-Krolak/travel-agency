@@ -10,7 +10,8 @@ export const formatPrice = price => {
       });
 };
 export const formatPriceToNumber = price => {
-  let number = price.replace('$,'); 
+  let number = price.replace('$', ''); 
+  
   number = number.replace (',','');
   return parseFloat(number);
 };
