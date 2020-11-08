@@ -14,6 +14,7 @@ const OrderOptionIcons = ({values, currentValue, setOptionValue }) => (
         {/* poszczególny wers */}
         <div key={value.id} value={value.id}  onClick= {() => setOptionValue(value.name)}>
           <Icon name={value.icon} />
+          {console.log('price',value.price)}
           {value.name} ({formatPrice(value.price)})
         </div>
       </div>
