@@ -1,13 +1,24 @@
 import React from 'react';
 import styles from './OrderOption.scss';
 import PropTypes from 'prop-types';
-//import { formatPrice } from '../../../utils/formatPrice.js';
+import Icon from '../../common/Icon/Icon.js';
+import { formatPrice } from '../../../utils/formatPrice.js';
 
-
-const OrderOptionIcons = () => (
+const OrderOptionIcons = ({values, currentValue, setOptionValue }) => (
 
   <div className={styles.component}>
-    <h3 className={styles.title}>OrderOptionCheckboxes</h3>
+    {/* mapowanie po value renderujace divy */}
+    {values.map(value => (
+      // aktywne lub nieaktywne 
+      <div key={value.id} className={ styles.icon + '' + currentValue == value.id ? styles.inconActive : styles.icon}>
+        {/* poszczególny wers */}
+        <div key={value.id} value={value.id}  onClick= {() => setOptionValue(value.name)}>
+          <Icon name={value.icon} />
+          {value.name} ({formatPrice(value.price)})
+        </div>
+      </div>
+    ))
+    }
   </div>
 );
 
@@ -25,6 +36,7 @@ const OrderOptionIcons = () => (
 OrderOptionIcons.propTypes = {
   values:  PropTypes.array,
   currentValue: PropTypes.string,
+  setOptionValue: PropTypes.func,
 };
 
 export default OrderOptionIcons;

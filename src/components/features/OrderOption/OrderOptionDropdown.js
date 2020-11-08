@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './OrderOption.scss';
 import PropTypes from 'prop-types';
-//import pricing from '../../../data/pricing.json';
 import { formatPrice } from '../../../utils/formatPrice.js';
 
 const OrderOptionDropdown = ({values, required, currentValue, setOptionValue}) => (

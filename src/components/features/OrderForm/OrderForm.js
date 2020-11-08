@@ -14,8 +14,8 @@ const OrderForm = ({tripCost,setOrderOption, options}) => (
       <Row>
         {pricing.map(option => (
           <Col md={4} key={option.id}>
-            {console.log('options', option.id) }{/*w kolejnej linijce bylo currentValue={option[id]}  */}
-            <OrderOption {...option} currentValue={option} setOrderOption={setOrderOption}/>
+            {console.log('options ID', option.id) }
+            <OrderOption {...option} currentValue={option['']} setOrderOption={setOrderOption}/>
           </Col>
         ))}
         <Col xs={12}>
@@ -31,6 +31,7 @@ OrderForm.propTypes = {
   options: PropTypes.object,
   pricing: PropTypes.shape({id: PropTypes.string, price: PropTypes.number}),
   setOrderOption: PropTypes.func,
+  currentValue: PropTypes.string,
 };
 
 export default OrderForm;
