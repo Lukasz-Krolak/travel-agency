@@ -28,7 +28,6 @@ const OrderOption = ({name, type, id, setOrderOption, ...otherProps}) => {
   }
 };
 
-// OrderOption.propTypes = {
-// };
+
 
 export default OrderOption;
