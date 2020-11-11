@@ -9,12 +9,10 @@ const OrderOptionNumber = ({ limits, price, currentValue, setOptionValue}) => (
       type={'number'}
       value={currentValue}
       onChange={event => setOptionValue(event.currentTarget.value)}
-      
       min={limits.min}
       max={limits.max}
     />
     <h4> Cost / person &nbsp;{price}</h4>
-    
   </div>
 );
 
