@@ -17,7 +17,6 @@ const OrderOptionCheckboxes = ({values, currentValue, setOptionValue}) => (
 
   <div className={styles.checkboxes}>
     {values.map(value => (
-      // aktywne lub nieaktywne 
       <label key={value.id} >
         <input
           name={value.name}
@@ -40,6 +39,5 @@ OrderOptionCheckboxes.propTypes = {
   setOptionValue: PropTypes.func,
   price: PropTypes.string,
 };
-
 
 export default OrderOptionCheckboxes;

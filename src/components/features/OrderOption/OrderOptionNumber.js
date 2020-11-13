@@ -12,7 +12,7 @@ const OrderOptionNumber = ({ limits, price, currentValue, setOptionValue}) => (
       min={limits.min}
       max={limits.max}
     />
-    <h4> Cost / person &nbsp;{price}</h4>
+    <h5> Cost / person &nbsp;{price}</h5>
   </div>
 );
 
