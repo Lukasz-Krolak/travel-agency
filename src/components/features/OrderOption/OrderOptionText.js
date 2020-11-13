@@ -6,7 +6,7 @@ const OrderOptionText = () => (
     <input
       className={styles.input} 
       type={'text'} 
-      name="name" 
+      name={'name'} 
     />
     <input 
       className={styles.input}
