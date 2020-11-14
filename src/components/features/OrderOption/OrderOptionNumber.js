@@ -6,7 +6,7 @@ const OrderOptionNumber = ({ limits, price, currentValue, setOptionValue}) => (
   <div className={styles.number}>
     {console.log('current',currentValue)}
     <input className={styles.inputSmall}
-      type={'number'}
+      type="number"
       value={currentValue}
       onChange={event => setOptionValue(event.currentTarget.value)}
       min={limits.min}
