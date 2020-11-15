@@ -1,6 +1,5 @@
 import React from 'react';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-//import styles from './OrderOption.scss';
 import DatePicker from 'react-datepicker';
 import PropTypes from 'prop-types';
 
