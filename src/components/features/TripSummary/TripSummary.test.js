@@ -8,17 +8,17 @@ describe('Component TripSummary', () => {
     expect(component).toBeTruthy();
   });
   //test2
-  it('should render correct src and alt', () => {
+  it('should render correct src and alt', (src, alt) => {
     const expectedName = 'name';
     const expectedImage = 'image.jpg';
     const component = shallow(<TripSummary image={expectedImage} name={expectedName} tags={[]}/>);
     
-    const renderedName = component.find('.alt').text(); 
+    const renderedName = component.find('.alt').prop([alt]).text(); 
     // w tripSummary wystepuje klilka miejsc 
     //gdzie jest przekazany props name stąd szukam po alt, i wciąż jest błąd
     // renderedName="", a nie expectedName
     expect(renderedName).toEqual(expectedName);
-    expect(component.find('img').prop('src')).toEqual(expectedImage);
+    expect(component.find('img').prop([src])).toEqual(expectedImage);
   });
   //test3
   // it('should render without crashing correct link', () => {
