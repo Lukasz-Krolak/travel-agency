@@ -8,7 +8,7 @@ describe('Component TripSummary', () => {
     expect(component).toBeTruthy();
     console.log(component.debug());
   });
-  //test2
+  // //test2
   it('should render correct src and alt', () => {    
     const expectedName = 'nnn';
     const expectedImage = 'image.jpg';
@@ -18,18 +18,19 @@ describe('Component TripSummary', () => {
     expect(renderedName).toEqual(expectedName);
     expect(component.find('img').prop('image')).toEqual(expectedImage);
   });
-  // //test3
-  // it('should render without crashing', () => {
-  //   const component = shallow(<TripSummary name='12' cost='50' tags={[]}/>);
-  //   expect(component).toBeTruthy(12);
-  //   expect(component).toBeTruthy(50);
-  //   console.log(component.debug());
-  // });
+  //test3
+  it('should render without crashing', () => {
+    const component = shallow(<TripSummary name={'nameABC'}  cost={'50'} days={3} tags={[]}/>);
+    //expect(component).toBeTruthy('aB');
+    expect(component).toBeTruthy();
+
+    console.log(component.debug());
+  });
   
 
 
-  // //test4 //   name: PropTypes.string.isRequired,
-  // it('should throw error without required props', () => {
-  //   expect(() => shallow(<TripSummary />)).toThrow();
-//   });
+  //test4 //  
+  it('should throw error without required props', () => {
+    expect(() => shallow(<TripSummary />)).toThrow();
+  });
 });
