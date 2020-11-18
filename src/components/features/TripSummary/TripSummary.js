@@ -10,7 +10,8 @@ const TripSummary = ({id, image, name, cost, days, tags}) => (
       <article className={styles.component}>
         
         <img src={image} alt={name}>
-          {console.log('name', name)}
+          {/* {console.log('name', name)} */}
+          {console.log('image', image)}
         </img> 
         
         <h3 className={styles.title}>{name}</h3>
