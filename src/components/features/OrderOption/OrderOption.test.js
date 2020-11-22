@@ -19,7 +19,7 @@ describe ('Component OrderOption',() => {
     const expectedName = 'OrderOption name';
     const component = shallow(<OrderOption name={expectedName}/>);
     
-    const renderedName = component.find('title').text('name'); 
+    const renderedName = component.find('title').text();
     expect(renderedName).toEqual(expectedName);
   });
 });

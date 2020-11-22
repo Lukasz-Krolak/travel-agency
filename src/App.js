@@ -2,16 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import MainLayout from './components/layout/MainLayout/MainLayout';
-
 import Home from './components/views/Home/Home';
 import Trips from './components/views/Trips/TripsContainer';
 import Trip from './components/views/Trip/TripContainer';
-
 import Countries from './components/views/Countries/CountriesContainer';
 import Country from './components/views/Country/CountryContainer';
-
+import Login from './components/views/Login/LoginContainer';
+import Profile from './components/views/Profile/Profile.js';
 import Regions from './components/views/Regions/RegionsContainer';
 import Info from './components/views/Info/Info';
 import NotFound from './components/views/NotFound/NotFound';
@@ -60,6 +58,8 @@ class App extends React.Component {
             <Route exact path='/regions' component={Regions} />
             <Route exact path='/country/:id' component={Country} />
             <Route exact path='/trip/:id' component={Trip} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/profile' component={Profile} />
 
             {/* TODO - add more routes for other views */}
             <Route exact path='/info' component={Info} />

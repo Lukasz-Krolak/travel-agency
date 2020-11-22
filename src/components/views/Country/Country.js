@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Hero from '../../layout/Hero/Hero';
 import Section from '../../layout/Section/Section';
 import PageTitle from '../../common/PageTitle/PageTitle';
@@ -10,7 +9,6 @@ import DetailsImage from '../../common/DetailsImage/DetailsImage';
 import List from '../../common/List/List';
 import ListItem from '../../common/ListItem/ListItem';
 import TripSummary from '../../features/TripSummary/TripSummary';
-
 import {Grid, Row, Col} from 'react-flexbox-grid';
 
 const Country = ({name, capital, region, subregion, currencies, population, trips}) => (
