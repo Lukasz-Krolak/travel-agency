@@ -7,9 +7,9 @@ import orderReducer from './orderRedux';
 // define initial state and shallow-merge initial data
 const initialState = {
   login:{
-    name:'',
-    email: '',
-    password: '',
+    name:'Jan Nowak',
+    email: 'Nowakjan@email.com',
+    password: '123AbC!',
   },
   order: {
     trip: null,
