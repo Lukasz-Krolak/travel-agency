@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Grid} from 'react-flexbox-grid';
+import { Grid } from 'react-flexbox-grid';
 import Section from '../../layout/Section/Section';
 
 
@@ -9,6 +9,7 @@ const Profile = ({ name, password, email}) => {
   return (
     <Section>
       <Grid>
+        test
         <div>
           <h1>{name}</h1>
           <h2>{password}</h2>

@@ -1,24 +1,30 @@
 
-export const getLoginName = name => name;
-export const getEmail = email => email;
-export const getPassword = password => password;
+export const getLoginName = ({login}) => login.name;
+export const getEmail = ({login}) => login.email;
+export const getPassword = ({login}) => login.password;
 
 
 // action name creator
 const reducerName = 'login';
 const createActionName = name => `app/${reducerName}/${name}`;
 
-// action types
-export const TYPE_LOGIN = createActionName('TYPE_LOGIN');
+// action typsetes
+export const SET_LOGIN = createActionName('SET_LOGIN');
 
 // action creators
-export const setLoginOption = payload => ({ payload, type: TYPE_LOGIN });
+export const setLoginValue = payload => ({ payload, type: SET_LOGIN });
 
 // reducer
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
-    case TYPE_LOGIN:
-      return action.payload;
+    case SET_LOGIN:
+      return {
+        ...statePart,
+        login: {
+          ...statePart.login,
+          ...action.payload,
+        },
+      };
     default:
       return statePart;
   }
