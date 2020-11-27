@@ -5,7 +5,7 @@ import Section from '../../layout/Section/Section';
 import styles from './Login.scss';
 import {Link} from 'react-router-dom';
 
-const Login = ({setLoginValue, currentValue }) => {
+const LoginForm = ({setLoginValue, currentValue }) => {
   
   return( 
     <Section>
@@ -40,7 +40,7 @@ const Login = ({setLoginValue, currentValue }) => {
               value={currentValue}
               onChange={event => setLoginValue(event.currentTarget.value)}
             />
-            <Link to='/profile'>
+            <Link to='/profileData'>
               <button
                 type='submit'
 
@@ -55,11 +55,11 @@ const Login = ({setLoginValue, currentValue }) => {
   );
 };
 
-Login.propTypes = {
+LoginForm.propTypes = {
   currentValue: PropTypes.string,
   setLoginValue: PropTypes.func,
 };
 
 
-export default Login;
+export default LoginForm;
  

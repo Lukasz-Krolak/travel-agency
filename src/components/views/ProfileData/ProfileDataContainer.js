@@ -1,6 +1,6 @@
-import Profile from './Profile.js';
+import ProfileData from './ProfileData.js';
 import { connect } from 'react-redux';
-import { getLoginName, getEmail, getPassword } from './../../../redux/loginRedux.js';
+import { getLoginName, getEmail, getPassword } from '../../../redux/loginRedux.js';
 
 const mapStateToProps = state => {
   const name = getLoginName(state);
@@ -14,4 +14,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps)(ProfileData);

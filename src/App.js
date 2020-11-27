@@ -8,8 +8,8 @@ import Trips from './components/views/Trips/TripsContainer';
 import Trip from './components/views/Trip/TripContainer';
 import Countries from './components/views/Countries/CountriesContainer';
 import Country from './components/views/Country/CountryContainer';
-import Login from './components/views/Login/LoginContainer.js';
-import Profile from './components/views/Profile/ProfileContainer.js';
+import LoginForm from './components/views/LoginForm/LoginFormContainer.js';
+import ProfileData from './components/views/ProfileData/ProfileDataContainer.js';
 import Regions from './components/views/Regions/RegionsContainer';
 import Info from './components/views/Info/Info';
 import NotFound from './components/views/NotFound/NotFound';
@@ -58,8 +58,8 @@ class App extends React.Component {
             <Route exact path='/regions' component={Regions} />
             <Route exact path='/country/:id' component={Country} />
             <Route exact path='/trip/:id' component={Trip} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/profile' component={Profile} />
+            <Route exact path='/loginform' component={LoginForm} />
+            <Route exact path='/profiledata' component={ProfileData} />
 
             {/* TODO - add more routes for other views */}
             <Route exact path='/info' component={Info} />

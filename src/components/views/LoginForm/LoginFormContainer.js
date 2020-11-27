@@ -1,6 +1,6 @@
-import Login from './Login.js';
+import LoginForm from './LoginForm.js';
 import { connect } from 'react-redux';
-import { getLoginName, getEmail, getPassword } from './../../../redux/loginRedux.js';
+import { getLoginName, getEmail, getPassword } from '../../../redux/loginRedux.js';
 
 const mapStateToProps = state => {
   const name = getLoginName(state);
@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch, name, password, email) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps )(Login);
+export default connect(mapStateToProps, mapDispatchToProps )(LoginForm);
