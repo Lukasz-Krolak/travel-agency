@@ -24,15 +24,6 @@ const ProfileData = ({ name, password, email}) => {
             <List variant='light'>
               <ListItem title= {name} icon='user' />
               <ListItem title= {email} icon='envelope' />
-              <ListItem title= 'Add phone:' icon='phone'>
-                <input type='number'/>
-              </ListItem>
-              <ListItem title= 'Add adres:' icon='home'>
-                <input type='text'/>
-              </ListItem>
-
-
-
             </List>
           </Col>
         </Row>
