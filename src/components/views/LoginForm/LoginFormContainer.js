@@ -12,14 +12,9 @@ const mapStateToProps = state => {
     password,
   };
 };
-const mapDispatchToProps = (dispatch, name, password, email) => {
+const mapDispatchToProps = (dispatch, setLogged) => {
   return {
-    setLoginValue: () => dispatch(
-  
-      name,
-      email,
-      password,
-    ),
+    setLogged: (isLogged) => dispatch(setLogged(isLogged)),
   };
 };
 
